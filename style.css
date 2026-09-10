@@ -76,6 +76,12 @@ p{text-wrap:pretty}
 }
 @media (max-width:899px){
   .nav__cta{font-size:12px;padding:11px 14px}
+  .nav::before{
+    content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(20,22,26,.55),rgba(20,22,26,0));
+    opacity:1;transition:opacity .3s ease;
+  }
+  .nav.is-solid::before{opacity:0}
 }
 
 /* ---------- drawer (menu mobile) ---------- */
@@ -156,6 +162,27 @@ body.drawer-lock{overflow:hidden}
 @media (min-width:1000px){
   .hero__inner{grid-template-columns:1.5fr 1fr}
   .hero__figure{justify-self:end;max-width:100%}
+}
+
+/* ---------- hero mobile: foto de fundo com degradê ---------- */
+@media (max-width:999px){
+  .hero{min-height:100svh;justify-content:flex-end;padding-bottom:clamp(40px,7vh,64px)}
+  .hero__inner{display:block}
+  .hero__figure{
+    position:absolute;inset:0;max-width:none;margin:0;z-index:0;
+    animation:none;justify-self:auto;
+  }
+  .hero__figure img{
+    width:100%;height:100%;object-fit:cover;object-position:75% 22%;
+    border-radius:0;box-shadow:none;opacity:.4;
+  }
+  .hero__figure::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg,var(--color-navy) 40%,rgba(22,33,45,.55) 68%,rgba(22,33,45,.15) 100%),
+      linear-gradient(0deg,var(--color-navy) 0%,rgba(22,33,45,.2) 30%,rgba(22,33,45,.2) 70%,var(--color-navy) 100%);
+  }
+  .hero__figure figcaption{display:none}
+  .hero__text{position:relative;z-index:1}
 }
 
 /* ---------- problema ---------- */
