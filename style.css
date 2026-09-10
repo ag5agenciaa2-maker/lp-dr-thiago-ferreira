@@ -236,68 +236,34 @@ body.drawer-lock{overflow:hidden}
 }
 .hero__actions .btn--ghost:hover{transform:translateY(-2px);background:rgba(232,147,94,.08)}
 
-.hero__figure{max-width:380px;width:100%;margin:0;position:relative;justify-self:start;
+.hero__figure{max-width:400px;width:100%;margin:0;position:relative;justify-self:start;
   animation:revealIn 900ms ease-out 200ms both}
 
-/* moldura premium: respiro + borda dupla + shimmer contínuo */
+/* moldura simples: fio fino + glow discreto atrás */
 .hero__figure-frame{
-  position:relative;border-radius:5px;padding:7px;overflow:hidden;isolation:isolate;
-  background:linear-gradient(155deg,rgba(232,147,94,.65),rgba(247,244,239,.12) 35%,rgba(232,147,94,.35) 100%);
-  box-shadow:0 40px 90px -20px rgba(0,0,0,.65),0 8px 24px -8px rgba(232,147,94,.2);
+  position:relative;border-radius:3px;padding:1px;overflow:hidden;
+  background:linear-gradient(155deg,rgba(232,147,94,.5),rgba(247,244,239,.08) 40%,rgba(232,147,94,.22) 100%);
 }
 .hero__figure-frame::before{
-  content:'';position:absolute;inset:-26px;z-index:-1;border-radius:12px;
-  background:radial-gradient(circle at 25% 15%,rgba(232,147,94,.3),transparent 62%),
-    radial-gradient(circle at 85% 95%,rgba(232,147,94,.16),transparent 58%);
-  filter:blur(22px);opacity:.9;transition:opacity .5s ease;
+  content:'';position:absolute;inset:-18px;z-index:-1;border-radius:8px;
+  background:radial-gradient(circle at 30% 20%,rgba(232,147,94,.2),transparent 65%);
+  filter:blur(18px);opacity:.85;
 }
-/* linha de luz que percorre a borda continuamente */
-.hero__figure-frame::after{
-  content:'';position:absolute;inset:-40%;z-index:0;pointer-events:none;
-  background:conic-gradient(from 0deg,transparent 0%,rgba(255,238,220,.95) 4%,transparent 10%,transparent 100%);
-  animation:hero-frame-orbit 5s linear infinite;opacity:.8;
-}
-@keyframes hero-frame-orbit{to{transform:rotate(360deg)}}
-.hero__figure:hover .hero__figure-frame::before{opacity:1}
-.hero__figure:hover .hero__figure-frame::after{opacity:1}
 
-/* borda interna fina — segunda linha entre o respiro e a foto */
 .hero__figure-media{
   position:relative;z-index:1;border-radius:2px;overflow:hidden;aspect-ratio:4/5;
-  border:1px solid rgba(247,244,239,.18);
 }
 .hero__figure img{
   display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%;
-  filter:saturate(1.1) contrast(1.08) brightness(1.02) sepia(.06) hue-rotate(-6deg);
-  transition:filter .6s ease,transform .7s var(--ease-out-soft);
+  box-shadow:0 30px 70px rgba(0,0,0,.5);
+  filter:saturate(1.05) contrast(1.03);
+  transition:transform .6s var(--ease-out-soft);
 }
-.hero__figure:hover img{filter:saturate(1.16) contrast(1.1) brightness(1.05) sepia(.04) hue-rotate(-6deg);transform:scale(1.04)}
-
-/* duotone/vinheta: unifica a foto com a paleta navy + cobre da marca */
-.hero__figure-media::before{
-  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:
-    linear-gradient(155deg,rgba(232,147,94,.16),transparent 42%),
-    linear-gradient(0deg,rgba(22,33,45,.55) 0%,transparent 32%),
-    radial-gradient(ellipse at center,transparent 50%,rgba(10,14,20,.35) 100%);
-  mix-blend-mode:soft-light;
-}
-/* leve grain para acabamento editorial */
-.hero__figure-media::after{
-  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
-  background-image:radial-gradient(rgba(255,255,255,.9) 1px,transparent 1px);
-  background-size:3px 3px;
-}
+.hero__figure:hover img{transform:scale(1.02)}
 
 .hero__figure figcaption{
-  position:absolute;left:7px;right:7px;bottom:7px;z-index:3;
-  display:flex;align-items:center;gap:8px;
-  background:rgba(22,33,45,.72);backdrop-filter:blur(6px);color:var(--color-offwhite);
-  font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;padding:9px 12px;
-  border-top:1px solid rgba(232,147,94,.4);
-}
-.hero__figure figcaption::before{
-  content:'';display:block;width:5px;height:5px;border-radius:50%;background:var(--color-copper);flex-shrink:0;
+  position:absolute;left:1px;bottom:1px;background:var(--color-copper);color:var(--color-ink);
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:8px 12px;
 }
 
 /* indicador de scroll */
