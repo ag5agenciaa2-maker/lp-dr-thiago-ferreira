@@ -34,10 +34,12 @@
 </nav>
 
 <header class="hero" id="topo">
+  <div class="hero__noise" aria-hidden="true"></div>
   <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--secondary" aria-hidden="true"></div>
   <div class="hero__inner">
     <div class="hero__text">
-      <p class="kicker kicker--copper reveal">Campo Grande · Rio de Janeiro · 13 anos de atuação</p>
+      <p class="kicker kicker--copper hero__kicker reveal"><span class="hero__kicker-line" aria-hidden="true"></span>Campo Grande · Rio de Janeiro · 13 anos de atuação</p>
       <h1 class="hero__title">
         <span class="reveal">Seu direito</span>
         <span class="reveal hero__accent">não é</span>
@@ -50,10 +52,16 @@
       </div>
     </div>
     <figure class="hero__figure">
-      <img src="assets/thiago-ferreira-faria-advogado-toga-plenario-noite-1.webp" alt="Dr. Thiago Ferreira Faria, advogado, com toga em plenário de tribunal" loading="lazy" />
+      <div class="hero__figure-frame">
+        <img src="assets/thiago-ferreira-faria-advogado-toga-plenario-noite-1.webp" alt="Dr. Thiago Ferreira Faria, advogado, com toga em plenário de tribunal" loading="lazy" />
+      </div>
       <figcaption>Dr. Thiago Ferreira Faria · OAB/RJ</figcaption>
     </figure>
   </div>
+  <a class="hero__scroll" href="#areas" aria-label="Rolar para ver as áreas de atuação">
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+    <span class="hero__scroll-text">Áreas</span>
+  </a>
 </header>
 
 <section class="section section--light problem">
