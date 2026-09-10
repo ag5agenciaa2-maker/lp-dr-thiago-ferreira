@@ -239,19 +239,46 @@ body.drawer-lock{overflow:hidden}
 .hero__figure{max-width:420px;width:100%;margin:0;position:relative;justify-self:start;
   animation:revealIn 900ms ease-out 200ms both}
 
-/* moldura premium: borda com brilho + reflexo sutil por trás */
+/* moldura premium: borda com shimmer contínuo + reflexo em camadas */
 .hero__figure-frame{
-  position:relative;border-radius:3px;padding:1px;
-  background:linear-gradient(155deg,rgba(232,147,94,.55),rgba(247,244,239,.08) 35%,rgba(232,147,94,.25) 100%);
+  position:relative;border-radius:4px;padding:1.5px;overflow:hidden;isolation:isolate;
+  background:linear-gradient(155deg,rgba(232,147,94,.6),rgba(247,244,239,.1) 35%,rgba(232,147,94,.3) 100%);
 }
 .hero__figure-frame::before{
-  content:'';position:absolute;inset:-18px;z-index:-1;border-radius:8px;
-  background:radial-gradient(circle at 30% 20%,rgba(232,147,94,.22),transparent 65%);
-  filter:blur(18px);opacity:.9;
+  content:'';position:absolute;inset:-22px;z-index:-1;border-radius:10px;
+  background:radial-gradient(circle at 30% 20%,rgba(232,147,94,.26),transparent 65%),
+    radial-gradient(circle at 80% 90%,rgba(232,147,94,.14),transparent 60%);
+  filter:blur(20px);opacity:.9;transition:opacity .5s ease;
 }
-.hero__figure img{display:block;width:100%;border-radius:2px;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+/* linha de luz que percorre a borda continuamente */
+.hero__figure-frame::after{
+  content:'';position:absolute;inset:-40%;z-index:0;pointer-events:none;
+  background:conic-gradient(from 0deg,transparent 0%,rgba(255,238,220,.9) 4%,transparent 10%,transparent 100%);
+  animation:hero-frame-orbit 5s linear infinite;opacity:.75;
+}
+@keyframes hero-frame-orbit{to{transform:rotate(360deg)}}
+.hero__figure:hover .hero__figure-frame::before{opacity:1}
+.hero__figure:hover .hero__figure-frame::after{opacity:1}
+
+.hero__figure-media{position:relative;z-index:1;border-radius:3px;overflow:hidden}
+.hero__figure img{
+  display:block;width:100%;border-radius:3px;box-shadow:0 30px 70px rgba(0,0,0,.55);
+  filter:saturate(1.08) contrast(1.06) brightness(1.03);
+  transition:filter .6s ease,transform .6s var(--ease-out-soft);
+}
+.hero__figure:hover img{filter:saturate(1.14) contrast(1.08) brightness(1.06);transform:scale(1.015)}
+
+/* vinheta sutil + aquecimento tonal (casa com a paleta cobre) */
+.hero__figure-media::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:3px;
+  background:
+    linear-gradient(155deg,rgba(232,147,94,.14),transparent 40%),
+    radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.28) 100%);
+  mix-blend-mode:soft-light;
+}
+
 .hero__figure figcaption{
-  position:absolute;left:0;bottom:-1px;background:var(--color-copper);color:var(--color-ink);
+  position:absolute;left:1.5px;bottom:1.5px;z-index:3;background:var(--color-copper);color:var(--color-ink);
   font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:8px 12px;
 }
 
@@ -291,12 +318,15 @@ body.drawer-lock{overflow:hidden}
     position:absolute;inset:0;max-width:none;margin:0;z-index:0;
     animation:none;justify-self:auto;
   }
-  .hero__figure-frame{position:absolute;inset:0;padding:0;background:none;border-radius:0}
-  .hero__figure-frame::before{content:none}
+  .hero__figure-frame{position:absolute;inset:0;padding:0;background:none;border-radius:0;overflow:visible}
+  .hero__figure-frame::before,.hero__figure-frame::after{content:none}
+  .hero__figure-media{position:absolute;inset:0;border-radius:0}
+  .hero__figure-media::before{content:none}
   .hero__figure img{
     width:100%;height:100%;object-fit:cover;object-position:75% 22%;
-    border-radius:0;box-shadow:none;opacity:.4;
+    border-radius:0;box-shadow:none;opacity:.4;filter:none;
   }
+  .hero__figure:hover img{transform:none}
   .hero__figure::after{
     content:'';position:absolute;inset:0;
     background:linear-gradient(90deg,var(--color-navy) 40%,rgba(22,33,45,.55) 68%,rgba(22,33,45,.15) 100%),
