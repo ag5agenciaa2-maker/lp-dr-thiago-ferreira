@@ -16,15 +16,37 @@
     ).observe(sentinel);
   }
 
-  /* ---------- nav: link ativo conforme a seção em foco ---------- */
+  /* ---------- nav: link ativo + pílula deslizante (glider) ---------- */
+  const navMenu = document.getElementById('navMenu');
+  const navGlider = document.getElementById('navGlider');
   const navLinks = [...document.querySelectorAll('.nav__menu a[href^="#"]')];
-  if (navLinks.length) {
+
+  if (navLinks.length && navMenu && navGlider) {
+    const moveGliderTo = (el) => {
+      if (!el) return;
+      navGlider.style.transform = `translateX(${el.offsetLeft}px)`;
+      navGlider.style.width = `${el.offsetWidth}px`;
+      navMenu.classList.add('has-target');
+    };
+
+    const setActive = (id) => {
+      navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === `#${id}`));
+      const activeEl = navLinks.find((a) => a.classList.contains('is-active'));
+      if (activeEl && !navMenu.matches(':hover')) moveGliderTo(activeEl);
+    };
+
+    // hover: a pílula segue o link sob o cursor; ao sair, volta pro ativo
+    navLinks.forEach((a) => {
+      a.addEventListener('mouseenter', () => moveGliderTo(a));
+    });
+    navMenu.addEventListener('mouseleave', () => {
+      const activeEl = navLinks.find((a) => a.classList.contains('is-active'));
+      moveGliderTo(activeEl || navLinks[0]);
+    });
+
     const sections = navLinks
       .map((a) => document.querySelector(a.getAttribute('href')))
       .filter(Boolean);
-    const setActive = (id) => {
-      navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === `#${id}`));
-    };
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -34,6 +56,11 @@
       { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
     );
     sections.forEach((sec) => sectionObserver.observe(sec));
+
+    window.addEventListener('resize', () => {
+      const activeEl = navLinks.find((a) => a.classList.contains('is-active'));
+      if (activeEl) moveGliderTo(activeEl);
+    });
   }
 
   /* ---------- menu mobile (drawer) ---------- */
