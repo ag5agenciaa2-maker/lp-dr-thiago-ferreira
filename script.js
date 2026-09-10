@@ -16,6 +16,26 @@
     ).observe(sentinel);
   }
 
+  /* ---------- nav: link ativo conforme a seção em foco ---------- */
+  const navLinks = [...document.querySelectorAll('.nav__menu a[href^="#"]')];
+  if (navLinks.length) {
+    const sections = navLinks
+      .map((a) => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+    const setActive = (id) => {
+      navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === `#${id}`));
+    };
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+    );
+    sections.forEach((sec) => sectionObserver.observe(sec));
+  }
+
   /* ---------- menu mobile (drawer) ---------- */
   const toggle = document.getElementById('navToggle');
   const drawer = document.getElementById('drawer');
