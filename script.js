@@ -123,15 +123,22 @@
       errorBox.hidden = true;
       okBox.hidden = false;
 
-      // Protótipo: sem back-end. Para produção, troque por fetch() para o endpoint
-      // de e-mail/CRM, ou monte o envio via WhatsApp usando os dados abaixo.
-      console.log('Lead:', {
-        nome: nome.value.trim(),
-        telefone: telefone.value.trim(),
-        email: email.value.trim(),
-        area: area.value,
-        mensagem: mensagem.value.trim()
-      });
+      // ▼ MENSAGEM OBRIGATÓRIA — padrão AG5 (skill-alinhar-links-whatsapp) ▼
+      const nomeVal = nome.value.trim();
+      const telVal = telefone.value.trim();
+      const emailVal = email.value.trim();
+      const areaVal = area.value;
+      const msgVal = mensagem.value.trim();
+
+      let texto = `Olá, me chamo ${nomeVal}, vim através do site e gostaria de uma informação.\n`;
+      texto += `\n- E-mail: ${emailVal || 'não informado'}`;
+      texto += `\n- Telefone: ${telVal || 'não informado'}`;
+      texto += `\n- Área do caso: ${areaVal}`;
+      if (msgVal) texto += `\n- Descrição do caso: ${msgVal}`;
+      // ▲ ────────────────────────────────────────────────────────────── ▲
+
+      const urlWhatsApp = `https://wa.me/5521966938793?text=${encodeURIComponent(texto)}`;
+      window.open(urlWhatsApp, '_blank', 'noopener,noreferrer');
 
       form.reset();
     });
