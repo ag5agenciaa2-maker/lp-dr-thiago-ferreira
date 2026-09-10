@@ -318,16 +318,18 @@
   <div class="wrap credits">
     <p>© Thiago Ferreira Advocacia 2026</p>
     <div class="credits__right">
-      <a href="termos-e-condicoes.html">Termos e Condições</a>
-      <a href="politica-de-privacidade.html">Política de Privacidade</a>
       <a href="#" id="ck-prefs-link" style="text-decoration:none; color:inherit; display:inline-flex; align-items:center; gap:6px;">
-        <span style="display:inline-flex; align-items:center; width:28px; height:14px; background:rgba(255,255,255,0.1); border-radius:10px; padding:2px; border:1px solid rgba(255,255,255,0.2); position:relative; font-size:8px; font-weight:bold;">
+        <span id="cookie-toggle" class="active" style="display:inline-flex; align-items:center; width:28px; height:14px; background:rgba(255,255,255,0.1); border-radius:10px; padding:2px; border:1px solid rgba(255,255,255,0.2); position:relative; font-size:8px; font-weight:bold;">
           <span style="color:#86EFAC; margin-left:2px;">✓</span>
           <span style="color:#FCA5A5; margin-left:auto; margin-right:2px;">✕</span>
-          <span style="position:absolute; left:15px; width:10px; height:10px; background:var(--ck-accent); border-radius:50%; box-shadow:0 0 5px rgba(0,0,0,0.3);"></span>
+          <span id="cookie-toggle-dot" style="position:absolute; left:15px; width:10px; height:10px; background:var(--ck-accent); border-radius:50%; box-shadow:0 0 5px rgba(0,0,0,0.3); transition:left .2s ease;"></span>
         </span>
         Cookie
       </a>
+      <span class="credits__sep" aria-hidden="true">|</span>
+      <a href="termos-e-condicoes.html">Termos e Condições</a>
+      <span class="credits__sep" aria-hidden="true">|</span>
+      <a href="politica-de-privacidade.html">Política de Privacidade</a>
       <p>Desenvolvido por <a href="https://www.ag5agencia.com.br" target="_blank" rel="noopener">AG5</a> Agência</p>
     </div>
   </div>

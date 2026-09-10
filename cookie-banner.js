@@ -96,6 +96,27 @@
     }
 
     /* ============================================================
+       TOGGLE VISUAL DE COOKIE NO RODAPÉ (Padrão AG5)
+       ============================================================ */
+    function updateFooterToggleIcon() {
+        var toggle = document.getElementById('cookie-toggle');
+        if (!toggle) return;
+
+        var prefs = load();
+        if (prefs && prefs.decided) {
+            if (prefs.functional || prefs.analytics || prefs.performance || prefs.advertising) {
+                toggle.classList.remove('inactive');
+                toggle.classList.add('active');
+            } else {
+                toggle.classList.remove('active');
+                toggle.classList.add('inactive');
+            }
+        } else {
+            toggle.classList.add('active');
+        }
+    }
+
+    /* ============================================================
        MODAL
        ============================================================ */
     function openModal() {
@@ -146,6 +167,7 @@
         dispatch(state);
         hideBanner();
         closeModal();
+        updateFooterToggleIcon();
         toast('Todos os cookies aceitos.');
     }
 
@@ -155,6 +177,7 @@
         dispatch(state);
         hideBanner();
         closeModal();
+        updateFooterToggleIcon();
         toast('Apenas cookies necessários salvos.');
     }
 
@@ -165,6 +188,7 @@
         dispatch(state);
         hideBanner();
         closeModal();
+        updateFooterToggleIcon();
         toast('Suas preferências foram salvas.');
     }
 
@@ -253,11 +277,13 @@
             // Usuário já decidiu — aplica preferências e mostra botão flutuante
             state = Object.assign({}, state, saved);
             dispatch(state);
+            updateFooterToggleIcon();
             if (CONFIG.showFloatingBtn) showFloatingBtn();
             return;
         }
 
         // Primeira visita — mostra o banner
+        updateFooterToggleIcon();
         setTimeout(showBanner, CONFIG.bannerDelay);
     }
 
