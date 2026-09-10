@@ -305,6 +305,9 @@ body.drawer-lock{overflow:hidden}
 .footer__links{display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.5}
 .footer__links a{color:rgba(247,244,239,.85)}
 .footer__links a:hover{color:var(--color-copper)}
+.footer__links--contact a{display:inline-flex;align-items:center;gap:10px}
+.footer__links--contact svg{flex-shrink:0;color:rgba(247,244,239,.55);transition:color .2s ease}
+.footer__links--contact a:hover svg{color:var(--color-copper)}
 .credits{border-top:1px solid rgba(247,244,239,.14);padding:22px 0 30px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:rgba(247,244,239,.55)}
 .credits p{margin:0;color:inherit;max-width:none}
 .credits a{color:var(--color-copper);font-weight:600}
