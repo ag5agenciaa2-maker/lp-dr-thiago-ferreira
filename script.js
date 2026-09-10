@@ -16,19 +16,39 @@
     ).observe(sentinel);
   }
 
-  /* ---------- menu mobile ---------- */
+  /* ---------- menu mobile (drawer) ---------- */
   const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('navMenu');
-  if (toggle && menu) {
+  const drawer = document.getElementById('drawer');
+  const drawerOverlay = document.getElementById('drawerOverlay');
+  const drawerClose = document.getElementById('drawerClose');
+  const drawerMenu = document.getElementById('drawerMenu');
+
+  if (toggle && drawer && drawerOverlay) {
+    const openDrawer = () => {
+      drawer.classList.add('is-open');
+      drawerOverlay.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('drawer-lock');
+    };
+    const closeDrawer = () => {
+      drawer.classList.remove('is-open');
+      drawerOverlay.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('drawer-lock');
+    };
+
     toggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(open));
+      drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
     });
-    menu.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+    drawerClose?.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+    drawerMenu?.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') closeDrawer();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
     });
   }
 

@@ -18,7 +18,7 @@
     <img src="assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" />
   </a>
   <div class="nav__right">
-    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu">
+    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav__menu" id="navMenu">
@@ -320,6 +320,23 @@
     <p>Desenvolvido por <a href="https://www.ag5agencia.com.br" target="_blank" rel="noopener">AG5</a> Agência</p>
   </div>
 </footer>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__head">
+    <img class="drawer__logo" src="assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" />
+    <button class="drawer__close" id="drawerClose" type="button" aria-label="Fechar menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="drawer__menu" id="drawerMenu">
+    <a href="#areas">Áreas</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#faq">Dúvidas</a>
+    <a href="#local">Onde estamos</a>
+    <a class="btn btn--copper drawer__cta" href="https://wa.me/5521966938793" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </nav>
+</aside>
 
 <script src="script.js"></script>
 </body>

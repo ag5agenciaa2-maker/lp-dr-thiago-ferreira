@@ -75,12 +75,59 @@ p{text-wrap:pretty}
   .nav__toggle{display:none}
 }
 @media (max-width:899px){
-  .nav__menu.is-open{
-    display:flex;flex-direction:column;align-items:flex-start;gap:18px;
-    position:absolute;top:100%;left:0;right:0;padding:22px var(--pad-x);
-    background:rgba(22,33,45,.97);backdrop-filter:blur(10px);
-  }
   .nav__cta{font-size:12px;padding:11px 14px}
+}
+
+/* ---------- drawer (menu mobile) ---------- */
+.drawer-overlay{
+  position:fixed;inset:0;z-index:9998;background:rgba(20,22,26,.55);
+  opacity:0;visibility:hidden;transition:opacity .3s var(--ease-out-soft),visibility 0s linear .3s;
+}
+.drawer-overlay.is-open{opacity:1;visibility:visible;transition:opacity .3s var(--ease-out-soft)}
+
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;z-index:9999;width:min(84vw,360px);
+  background:var(--color-navy);color:var(--color-offwhite);
+  display:flex;flex-direction:column;
+  box-shadow:-20px 0 60px rgba(0,0,0,.35);
+  transform:translateX(100%);transition:transform .35s var(--ease-out-soft);
+}
+.drawer.is-open{transform:translateX(0)}
+
+.drawer__head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--pad-x);border-bottom:1px solid rgba(247,244,239,.14);
+}
+.drawer__logo{height:44px;width:auto}
+.drawer__close{
+  display:flex;align-items:center;justify-content:center;position:relative;
+  width:42px;height:42px;background:none;border:1px solid rgba(247,244,239,.3);
+  border-radius:2px;cursor:pointer;padding:0;
+}
+.drawer__close span{
+  position:absolute;width:18px;height:1.5px;background:var(--color-offwhite);
+}
+.drawer__close span:first-child{transform:rotate(45deg)}
+.drawer__close span:last-child{transform:rotate(-45deg)}
+
+.drawer__menu{
+  display:flex;flex-direction:column;gap:6px;padding:24px var(--pad-x);overflow-y:auto;
+}
+.drawer__menu a{
+  padding:14px 2px;color:var(--color-offwhite);font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:20px;font-weight:500;letter-spacing:-.01em;opacity:.85;
+  border-bottom:1px solid rgba(247,244,239,.1);transition:opacity .2s ease,color .2s ease;
+}
+.drawer__menu a:hover{opacity:1;color:var(--color-copper)}
+.drawer__cta{
+  margin-top:18px;text-align:center;border:0;font-size:13px;
+  text-transform:uppercase;letter-spacing:.06em;
+}
+
+body.drawer-lock{overflow:hidden}
+
+@media (min-width:900px){
+  .drawer,.drawer-overlay{display:none}
 }
 
 /* ---------- hero ---------- */
