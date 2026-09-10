@@ -143,4 +143,85 @@
       form.reset();
     });
   }
+
+  /* ──────────────────────────────────────────────
+     WHATSAPP PREMIUM — Balão flutuante (AG5 V4)
+     Nicho: Advocacia (OAB Provimento 205/2021) → Compliance Mode
+  ─────────────────────────────────────────────── */
+  (function initWaPremium() {
+    const MODO_COMPLIANCE = true; // advocacia = nicho rigoroso → sem badge de notificação
+
+    const bubble        = document.getElementById('wa-message-bubble');
+    const typing        = document.getElementById('wa-typing');
+    const realMessage   = document.getElementById('wa-real-message');
+    const badge         = document.getElementById('wa-notification');
+    const closeBtn      = document.getElementById('wa-close-btn');
+    const mainBtn       = document.getElementById('wa-main-btn');
+    const targetSection = document.getElementById('areas'); // 3ª seção da página (Hero → Problema → Áreas)
+
+    if (!bubble || !typing || !realMessage || !closeBtn || !mainBtn || !targetSection) return;
+
+    const DELAY_BALAO            = 25000;
+    const DURATION_TYPING        = 2500;
+    const DURATION_BALAO_VISIVEL = 15000;
+    const DELAY_BADGE_APOS_SUMIR = 5000;
+
+    let triggered = false;
+    let autoHideTimer = null;
+    let badgeTimer = null;
+    let userClosed = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !triggered) {
+          triggered = true;
+          mainBtn.classList.add('visible');
+
+          setTimeout(() => {
+            if (userClosed) return;
+            bubble.classList.add('show');
+
+            setTimeout(() => {
+              if (userClosed) return;
+              typing.classList.add('is-hidden');
+              realMessage.classList.add('is-visible');
+              requestAnimationFrame(() => realMessage.classList.add('is-in'));
+            }, DURATION_TYPING);
+
+            autoHideTimer = setTimeout(() => {
+              if (userClosed) return;
+              bubble.classList.remove('show');
+
+              if (!MODO_COMPLIANCE && badge) {
+                badgeTimer = setTimeout(() => {
+                  if (userClosed) return;
+                  badge.classList.add('show');
+                }, DELAY_BADGE_APOS_SUMIR);
+              }
+            }, DURATION_BALAO_VISIVEL);
+          }, DELAY_BALAO);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(targetSection);
+
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      userClosed = true;
+      bubble.classList.remove('show');
+      if (autoHideTimer) clearTimeout(autoHideTimer);
+      if (badgeTimer) clearTimeout(badgeTimer);
+      if (!MODO_COMPLIANCE && badge) {
+        setTimeout(() => { badge.classList.add('show'); }, DELAY_BADGE_APOS_SUMIR);
+      }
+    });
+
+    mainBtn.addEventListener('click', () => {
+      bubble.classList.remove('show');
+      if (badge) badge.classList.remove('show');
+      if (autoHideTimer) clearTimeout(autoHideTimer);
+      if (badgeTimer) clearTimeout(badgeTimer);
+    });
+  })();
 })();
