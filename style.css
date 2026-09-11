@@ -221,36 +221,19 @@ body.drawer-lock{overflow:hidden}
 }
 .hero__actions .btn--ghost:hover{transform:translateY(-2px);background:rgba(232,147,94,.08)}
 
-.hero__figure{max-width:400px;width:100%;margin:0;position:relative;justify-self:start;
+.hero__figure{max-width:360px;width:100%;margin:0;justify-self:start;
   animation:revealIn 900ms ease-out 200ms both}
 
-/* moldura: fio fino único */
-.hero__figure-frame{
-  position:relative;border-radius:3px;padding:1px;
-  background:linear-gradient(160deg,rgba(232,147,94,.45),rgba(247,244,239,.06) 45%,rgba(232,147,94,.2) 100%);
-}
-/* sombra projetada — a foto "pousa" sobre o fundo, luz vindo de cima-esquerda */
-.hero__figure-frame::before{
-  content:'';position:absolute;left:6%;right:-4%;bottom:-28px;height:44px;z-index:-1;
-  background:radial-gradient(ellipse 70% 100% at center,rgba(0,0,0,.5),transparent 72%);
-  filter:blur(14px);
-}
-
-.hero__figure-media{
-  position:relative;z-index:1;border-radius:2px;overflow:hidden;aspect-ratio:4/5;
-}
 .hero__figure img{
-  display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%;
-  box-shadow:0 30px 70px rgba(0,0,0,.5);
-  filter:saturate(1.05) contrast(1.03);
-  transition:transform .6s var(--ease-out-soft);
+  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;
+  border-radius:2px;box-shadow:0 24px 48px -16px rgba(0,0,0,.5);
 }
-.hero__figure:hover img{transform:scale(1.02)}
 
 .hero__figure figcaption{
-  position:absolute;left:1px;bottom:1px;background:var(--color-copper);color:var(--color-ink);
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:8px 12px;
+  margin-top:14px;display:flex;align-items:baseline;gap:10px;
+  font-size:12px;letter-spacing:.04em;color:rgba(247,244,239,.6);
 }
+.hero__figure figcaption span{color:var(--color-copper);font-weight:600;letter-spacing:.1em}
 
 @media (min-width:1000px){
   .hero__inner{grid-template-columns:1.5fr 1fr}
@@ -265,15 +248,10 @@ body.drawer-lock{overflow:hidden}
     position:absolute;inset:0;max-width:none;margin:0;z-index:0;
     animation:none;justify-self:auto;
   }
-  .hero__figure-frame{position:absolute;inset:0;padding:0;background:none;border-radius:0;overflow:visible;box-shadow:none}
-  .hero__figure-frame::before,.hero__figure-frame::after{content:none}
-  .hero__figure-media{position:absolute;inset:0;border-radius:0;border:0;aspect-ratio:auto}
-  .hero__figure-media::before,.hero__figure-media::after{content:none}
   .hero__figure img{
-    width:100%;height:100%;object-fit:cover;object-position:75% 22%;
-    border-radius:0;box-shadow:none;opacity:.4;filter:none;
+    width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:75% 22%;
+    border-radius:0;box-shadow:none;opacity:.4;
   }
-  .hero__figure:hover img{transform:none}
   .hero__figure figcaption{display:none}
   .hero__figure::after{
     content:'';position:absolute;inset:0;
