@@ -221,7 +221,7 @@ body.drawer-lock{overflow:hidden}
 }
 .hero__actions .btn--ghost:hover{transform:translateY(-2px);background:rgba(232,147,94,.08)}
 
-.hero__figure{max-width:340px;width:100%;margin:0;justify-self:start;position:relative;
+.hero__figure{max-width:260px;width:100%;margin:0;justify-self:start;position:relative;
   animation:revealIn 900ms ease-out 200ms both}
 
 /* assinatura gráfica: um único filete no canto, nada mais */
@@ -242,7 +242,7 @@ body.drawer-lock{overflow:hidden}
 
 @media (min-width:1000px){
   .hero__inner{grid-template-columns:1.5fr 1fr}
-  .hero__figure{justify-self:end;max-width:100%}
+  .hero__figure{justify-self:end}
 }
 
 /* ---------- hero mobile: foto de fundo com degradê ---------- */
