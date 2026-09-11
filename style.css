@@ -221,7 +221,7 @@ body.drawer-lock{overflow:hidden}
 }
 .hero__actions .btn--ghost:hover{transform:translateY(-2px);background:rgba(232,147,94,.08)}
 
-.hero__figure{max-width:312px;width:100%;margin:0;justify-self:start;position:relative;
+.hero__figure{max-width:359px;width:100%;margin:0;justify-self:start;position:relative;
   animation:revealIn 900ms ease-out 200ms both}
 
 /* assinatura gráfica: um único filete no canto, nada mais */
