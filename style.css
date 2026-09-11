@@ -221,17 +221,22 @@ body.drawer-lock{overflow:hidden}
 }
 .hero__actions .btn--ghost:hover{transform:translateY(-2px);background:rgba(232,147,94,.08)}
 
-.hero__figure{max-width:360px;width:100%;margin:0;justify-self:start;
+.hero__figure{max-width:340px;width:100%;margin:0;justify-self:start;position:relative;
   animation:revealIn 900ms ease-out 200ms both}
 
+/* assinatura gráfica: um único filete no canto, nada mais */
+.hero__figure-mark{
+  position:absolute;top:-16px;left:-16px;width:40px;height:40px;z-index:1;
+  border-top:1px solid rgba(232,147,94,.7);border-left:1px solid rgba(232,147,94,.7);
+}
+
 .hero__figure img{
-  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;
-  border-radius:2px;box-shadow:0 24px 48px -16px rgba(0,0,0,.5);
+  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 16%;
 }
 
 .hero__figure figcaption{
-  margin-top:14px;display:flex;align-items:baseline;gap:10px;
-  font-size:12px;letter-spacing:.04em;color:rgba(247,244,239,.6);
+  margin-top:16px;display:flex;align-items:baseline;gap:10px;
+  font-size:12px;letter-spacing:.04em;color:rgba(247,244,239,.55);
 }
 .hero__figure figcaption span{color:var(--color-copper);font-weight:600;letter-spacing:.1em}
 
@@ -248,9 +253,10 @@ body.drawer-lock{overflow:hidden}
     position:absolute;inset:0;max-width:none;margin:0;z-index:0;
     animation:none;justify-self:auto;
   }
+  .hero__figure-mark{display:none}
   .hero__figure img{
-    width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:75% 22%;
-    border-radius:0;box-shadow:none;opacity:.4;
+    width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:75% 18%;
+    opacity:.4;
   }
   .hero__figure figcaption{display:none}
   .hero__figure::after{
