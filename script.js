@@ -137,6 +137,76 @@
     io.observe(counters);
   }
 
+  /* ---------- carrossel: sobre o advogado ---------- */
+  const carousel = document.getElementById('aboutCarousel');
+  if (carousel) {
+    const track = carousel.querySelector('.carousel__track');
+    const slides = [...carousel.querySelectorAll('.carousel__slide')];
+    const dotsWrap = carousel.querySelector('.carousel__dots');
+    const prevBtn = carousel.querySelector('.carousel__arrow--prev');
+    const nextBtn = carousel.querySelector('.carousel__arrow--next');
+    const AUTOPLAY_MS = 4500;
+    let current = slides.findIndex((s) => s.classList.contains('is-active'));
+    if (current < 0) current = 0;
+    let timer = null;
+
+    // dots
+    const dots = slides.map((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel__dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Ir para foto ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i, true));
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    const render = () => {
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+    };
+
+    const goTo = (index, userAction) => {
+      current = (index + slides.length) % slides.length;
+      render();
+      if (userAction) restartAutoplay();
+    };
+    const next = () => goTo(current + 1);
+    const prev = () => goTo(current - 1);
+
+    const startAutoplay = () => {
+      if (reduceMotion) return;
+      stopAutoplay();
+      timer = setInterval(next, AUTOPLAY_MS);
+    };
+    const stopAutoplay = () => { if (timer) clearInterval(timer); timer = null; };
+    const restartAutoplay = () => { stopAutoplay(); startAutoplay(); };
+
+    nextBtn?.addEventListener('click', () => goTo(current + 1, true));
+    prevBtn?.addEventListener('click', () => goTo(current - 1, true));
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+    carousel.addEventListener('focusin', stopAutoplay);
+    carousel.addEventListener('focusout', startAutoplay);
+
+    // swipe touch
+    let touchStartX = 0;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; stopAutoplay(); }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
+      startAutoplay();
+    }, { passive: true });
+
+    render();
+    const carouselIo = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) startAutoplay();
+      else stopAutoplay();
+    }, { threshold: 0.3 });
+    carouselIo.observe(carousel);
+  }
+
   /* ---------- formulário: validação real ---------- */
   const form = document.getElementById('form');
   const errorBox = document.getElementById('formError');
