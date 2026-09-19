@@ -146,6 +146,7 @@
     const prevBtn = carousel.querySelector('.carousel__arrow--prev');
     const nextBtn = carousel.querySelector('.carousel__arrow--next');
     const countCurrent = carousel.querySelector('.carousel__count-current');
+    const captionEl = carousel.querySelector('.carousel__caption');
     const AUTOPLAY_MS = 4500;
     let current = slides.findIndex((s) => s.classList.contains('is-active'));
     if (current < 0) current = 0;
@@ -167,6 +168,14 @@
       slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
       dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
       if (countCurrent) countCurrent.textContent = String(current + 1).padStart(2, '0');
+      if (captionEl) {
+        const caption = slides[current]?.dataset.caption || '';
+        captionEl.style.opacity = '0';
+        setTimeout(() => {
+          captionEl.textContent = caption;
+          captionEl.style.opacity = '1';
+        }, 150);
+      }
     };
 
     const goTo = (index, userAction) => {

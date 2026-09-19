@@ -461,13 +461,19 @@ body.drawer-lock{overflow:hidden}
 .carousel__arrow--prev{left:14px}
 .carousel__arrow--next{right:14px}
 
-.carousel__footer{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px}
+.carousel__footer{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:18px}
+.carousel__meta{min-width:0}
 .carousel__count{
-  margin:0;font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;
+  margin:0 0 4px;font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;
   color:rgba(20,22,26,.42);white-space:nowrap;
 }
 .carousel__count-current{color:var(--color-navy);font-weight:600}
-.carousel__dots{display:flex;gap:8px}
+.carousel__caption{
+  margin:0;font-size:13px;line-height:1.4;color:rgba(20,22,26,.65);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  transition:opacity .3s ease;
+}
+.carousel__dots{display:flex;gap:8px;flex-shrink:0;padding-bottom:2px}
 .carousel__dot{
   width:6px;height:6px;border-radius:50%;border:0;padding:0;cursor:pointer;
   background:rgba(20,22,26,.22);transition:background .25s ease,transform .25s ease,width .3s ease;
