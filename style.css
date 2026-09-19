@@ -492,8 +492,8 @@ body.drawer-lock{overflow:hidden}
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:clamp(80px,16vh,160px) var(--pad-x);
 }
-.quote blockquote{margin:0;max-width:34ch;text-align:center;animation:fadeIn 900ms ease-in-out both}
-.quote p{margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(1.8rem,4.6vw,3.4rem);line-height:1.15;letter-spacing:-.02em}
+.quote blockquote{margin:0;max-width:min(90vw,620px);text-align:center;animation:fadeIn 900ms ease-in-out both}
+.quote p{margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.25;letter-spacing:-.01em}
 .quote span{color:var(--color-copper)}
 .quote footer{margin-top:clamp(24px,4vh,44px);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,244,239,.6);font-weight:600}
 
