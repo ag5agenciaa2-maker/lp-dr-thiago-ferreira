@@ -489,12 +489,25 @@ body.drawer-lock{overflow:hidden}
 /* ---------- citação ---------- */
 .quote{
   background:var(--color-navy);color:var(--color-offwhite);min-height:70vh;
-  display:flex;align-items:center;justify-content:center;padding:clamp(80px,18vh,180px) var(--pad-x);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:clamp(80px,16vh,160px) var(--pad-x);
 }
 .quote blockquote{margin:0;max-width:22ch;text-align:center;animation:fadeIn 900ms ease-in-out both}
 .quote p{margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(2rem,6.4vw,5rem);line-height:1.04;letter-spacing:-.03em}
 .quote span{color:var(--color-copper)}
 .quote footer{margin-top:clamp(24px,4vh,44px);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,244,239,.6);font-weight:600}
+
+/* avaliação de cliente, abaixo da citação institucional */
+.quote__review{
+  margin-top:clamp(48px,8vh,88px);padding-top:clamp(32px,5vh,48px);
+  border-top:1px solid rgba(247,244,239,.14);
+  display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;
+  animation:fadeIn 900ms ease-in-out 150ms both;
+}
+.quote__review-stars{display:flex;gap:3px;color:var(--color-copper)}
+.quote .quote__review-text{margin:0;max-width:32ch;font-family:Inter,system-ui,sans-serif;font-weight:400;font-size:clamp(15px,1.6vw,18px);line-height:1.5;letter-spacing:normal;color:rgba(247,244,239,.9)}
+.quote .quote__review-author{margin:6px 0 0;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:normal;color:var(--color-offwhite)}
+.quote__review-author span{font-weight:400;color:rgba(247,244,239,.5)}
 
 /* ---------- faq ---------- */
 .faq{border-top:1px solid rgba(20,22,26,.16)}
