@@ -547,14 +547,6 @@ body.drawer-lock{overflow:hidden}
 /* ---------- localização ---------- */
 .local{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:center}
 
-/* status aberto/fechado, calculado por JS a partir do horário real */
-.local__status{
-  margin:20px 0 0;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-  color:rgba(247,244,239,.5);
-}
-.local__status.is-open{color:#5fd97d}
-.local__status.is-closed{color:var(--color-copper)}
-
 .local__list{
   margin:clamp(28px,4vh,40px) 0 clamp(36px,5vh,48px);padding-top:clamp(28px,4vh,40px);
   border-top:1px solid rgba(247,244,239,.14);

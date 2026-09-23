@@ -113,33 +113,6 @@
     });
   });
 
-  /* ---------- status "aberto agora" (seg-sex, 9h-18h, horário de Brasília) ---------- */
-  const statusEl = document.getElementById('localStatus');
-  const statusText = document.getElementById('localStatusText');
-  if (statusEl && statusText) {
-    const updateStatus = () => {
-      const now = new Date();
-      const parts = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'America/Sao_Paulo',
-        weekday: 'short',
-        hour: 'numeric',
-        hour12: false
-      }).formatToParts(now);
-      const weekday = parts.find((p) => p.type === 'weekday')?.value;
-      const hour = Number(parts.find((p) => p.type === 'hour')?.value);
-      const isWeekday = !['Sat', 'Sun'].includes(weekday);
-      const isOpen = isWeekday && hour >= 9 && hour < 18;
-
-      statusEl.classList.toggle('is-open', isOpen);
-      statusEl.classList.toggle('is-closed', !isOpen);
-      statusText.textContent = isOpen
-        ? 'Atendendo agora · Seg. a sex., 9h às 18h'
-        : 'Fora do horário · Volta seg. a sex., 9h às 18h';
-    };
-    updateStatus();
-    setInterval(updateStatus, 60000);
-  }
-
   /* ---------- counters (dispara uma única vez) ---------- */
   const counters = document.getElementById('counters');
   if (counters && !reduceMotion) {
