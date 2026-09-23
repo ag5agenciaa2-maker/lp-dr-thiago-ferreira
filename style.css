@@ -566,22 +566,31 @@ body.drawer-lock{overflow:hidden}
   100%{transform:scale(1.8);opacity:0}
 }
 
-.local__cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(247,244,239,.14);margin-bottom:clamp(24px,3.5vh,32px)}
+.local__cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:clamp(24px,3.5vh,32px)}
 .local__card{
-  background:var(--color-navy);padding:clamp(18px,2.2vw,24px);display:flex;gap:14px;align-items:flex-start;
-  transition:background .3s ease;
+  background:var(--color-navy-soft);border:1px solid rgba(247,244,239,.1);border-radius:3px;
+  padding:clamp(18px,2.2vw,22px);display:flex;gap:14px;align-items:flex-start;
+  transition:border-color .3s ease,transform .3s ease;
 }
-.local__card:hover{background:var(--color-navy-soft)}
-.local__card--wide{grid-column:1 / -1}
+.local__card:hover{border-color:rgba(232,147,94,.35);transform:translateY(-2px)}
 .local__icon{
   flex:0 0 auto;display:flex;align-items:center;justify-content:center;
-  width:36px;height:36px;border-radius:50%;background:rgba(232,147,94,.12);color:var(--color-copper);
+  width:36px;height:36px;border-radius:50%;background:rgba(232,147,94,.14);color:var(--color-copper);
 }
 .local__card .label{margin:0 0 6px}
 .local__card p:not(.label){margin:0;font-size:14px;line-height:1.6;color:rgba(247,244,239,.85)}
-.local__links{display:flex;flex-direction:column;gap:7px}
-.local__links a{font-size:14px;color:var(--color-offwhite)}
-.local__links a:hover{color:var(--color-copper)}
+
+.local__contact-label{margin:0 0 12px}
+.local__chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(24px,3.5vh,32px)}
+.local__chip{
+  display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:999px;
+  background:var(--color-navy-soft);border:1px solid rgba(247,244,239,.14);
+  font-size:13px;font-weight:500;color:var(--color-offwhite);
+  transition:background .25s ease,border-color .25s ease,transform .25s ease;
+}
+.local__chip svg{flex:0 0 auto;color:var(--color-copper)}
+.local__chip:hover{background:var(--color-copper);border-color:var(--color-copper);color:var(--color-ink);transform:translateY(-2px)}
+.local__chip:hover svg{color:var(--color-ink)}
 
 .local__actions{display:flex;flex-wrap:wrap;gap:12px}
 .local__actions .btn{padding:14px 22px}
@@ -616,7 +625,6 @@ body.drawer-lock{overflow:hidden}
 @media (max-width:900px){
   .local{grid-template-columns:1fr}
   .local__cards{grid-template-columns:1fr}
-  .local__card--wide{grid-column:1 / 2}
 }
 
 /* ---------- contato ---------- */
