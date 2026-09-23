@@ -575,12 +575,12 @@ body.drawer-lock{overflow:hidden}
 
 /* ---------- contato ---------- */
 .contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,96px);align-items:start}
-.contact .h2{margin-bottom:24px;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.03}
-.contact .lede{max-width:40ch;margin-bottom:28px}
-.note{margin:0 0 clamp(32px,5vh,48px);font-size:13px;line-height:1.6;color:rgba(20,22,26,.55)}
+.contact .h2{margin-bottom:18px;font-size:clamp(2rem,4.2vw,3rem);line-height:1.05}
+.contact .lede{max-width:40ch;margin-bottom:20px}
+.note{margin:0 0 24px;font-size:13px;line-height:1.6;color:rgba(20,22,26,.55)}
 
 .contact__assurances{
-  display:flex;flex-direction:column;gap:18px;margin:0;padding-top:clamp(24px,3.5vh,32px);
+  display:flex;flex-direction:column;gap:14px;margin:0;padding-top:20px;
   border-top:1px solid rgba(20,22,26,.12);
 }
 .contact__assurances div{display:flex;gap:14px;align-items:baseline}
@@ -588,13 +588,13 @@ body.drawer-lock{overflow:hidden}
   flex:0 0 auto;width:28px;font-size:13px;font-weight:600;color:var(--color-copper);
   font-variant-numeric:tabular-nums;
 }
-.contact__assurances dd{margin:0;font-size:14px;line-height:1.6;color:rgba(20,22,26,.72)}
+.contact__assurances dd{margin:0;font-size:14px;line-height:1.5;color:rgba(20,22,26,.72)}
 
 .form{
   background:var(--color-navy);color:var(--color-offwhite);border-radius:2px;
-  padding:clamp(32px,4.5vw,52px);display:flex;flex-direction:column;gap:clamp(24px,3vw,30px);
+  padding:clamp(28px,3.5vw,40px);display:flex;flex-direction:column;gap:clamp(18px,2.2vw,22px);
 }
-.form label{display:flex;flex-direction:column;gap:10px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:rgba(247,244,239,.5)}
+.form label{display:flex;flex-direction:column;gap:8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:rgba(247,244,239,.5)}
 .form input,.form select,.form textarea{
   background:transparent;border:0;border-bottom:1px solid rgba(247,244,239,.24);color:var(--color-offwhite);
   padding:6px 0 12px;font-size:16px;border-radius:0;font-family:inherit;font-weight:300;
