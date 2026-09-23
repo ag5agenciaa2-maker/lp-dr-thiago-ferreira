@@ -323,44 +323,25 @@
         <span id="localStatusText">Verificando horário de atendimento…</span>
       </p>
 
-      <div class="local__cards">
-        <div class="local__card">
-          <span class="local__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 1 0-14 0c0 4.9 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
-          </span>
-          <p class="label">Endereço</p>
-          <p>Av. Maria Teresa, 75 — Sala 630<br />Campo Grande, RJ — 23050-160</p>
+      <dl class="local__list">
+        <div>
+          <dt>Endereço</dt>
+          <dd>Av. Maria Teresa, 75 — Sala 630, Campo Grande, RJ — 23050-160</dd>
         </div>
-        <div class="local__card">
-          <span class="local__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <p class="label">Horário</p>
-          <p>Segunda a sexta, 9h às 18h<br />Sábado e domingo fechado</p>
+        <div>
+          <dt>Horário</dt>
+          <dd>Segunda a sexta, 9h às 18h. Sábado e domingo, fechado.</dd>
         </div>
-      </div>
-
-      <div class="local__contact">
-        <p class="label">Contato</p>
-        <div class="local__chips">
-          <a class="local__chip" href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" rel="noopener">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.9a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.3-4.5A8.4 8.4 0 1 1 20.5 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-            (21) 96693-8793
-          </a>
-          <a class="local__chip" href="tel:+552122545115">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-.6.4-1 1-1h3.2c.5 0 .9.3 1 .8l.8 3.2c.1.4 0 .8-.3 1.1L8 10.9a12 12 0 0 0 5.1 5.1l1.8-1.7c.3-.3.7-.4 1.1-.3l3.2.8c.5.1.8.5.8 1V19c0 .6-.4 1-1 1h-1C10.3 20 4 13.7 4 6V5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-            (21) 2254-5115
-          </a>
-          <a class="local__chip" href="mailto:thiago.adv.ferreira@gmail.com">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            E-mail
-          </a>
-          <a class="local__chip" href="https://www.instagram.com/thiago.adv.ferreira" target="_blank" rel="noopener">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-            Instagram
-          </a>
+        <div>
+          <dt>Contato</dt>
+          <dd>
+            <a href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" rel="noopener">WhatsApp</a>,
+            <a href="tel:+552122545115">(21) 2254-5115</a>,
+            <a href="mailto:thiago.adv.ferreira@gmail.com">e-mail</a> ou
+            <a href="https://www.instagram.com/thiago.adv.ferreira" target="_blank" rel="noopener">Instagram</a>
+          </dd>
         </div>
-      </div>
+      </dl>
 
       <div class="local__actions">
         <a class="btn btn--copper" href="https://www.google.com/maps/dir//Advogado+Dr.Thiago+Ferreira+Faria+%7C+Direito+Trabalhista+em+Campo+Grande+RJ+%7C+Previdenci%C3%A1rio+em+Campo+Grande+RJ,+Av.+Maria+Teresa,+75+-+Sl+630+-+Campo+Grande,+Rio+de+Janeiro+-+RJ,+23050-160/@-22.885678,-43.3815552,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x9be31af3191af1:0xecb54aec549789c8!2m2!1d-43.5657957!2d-22.9043377" target="_blank" rel="noopener">Como chegar</a>
@@ -369,13 +350,7 @@
     </div>
 
     <div class="map-frame reveal">
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2448591166626!2d-43.565795699999995!3d-22.9043377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be31af3191af1%3A0xecb54aec549789c8!2sAdvogado%20Dr.Thiago%20Ferreira%20Faria%20%7C%20Direito%20Trabalhista%20em%20Campo%20Grande%20RJ%20%7C%20Previdenci%C3%A1rio%20em%20Campo%20Grande%20RJ!5e0!3m2!1spt-BR!2sbr!4v1788962315739!5m2!1spt-BR!2sbr" title="Mapa do escritório — Av. Maria Teresa, 75, Campo Grande, RJ" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-      <a class="map__pin" href="https://www.google.com/maps/dir//Advogado+Dr.Thiago+Ferreira+Faria+%7C+Direito+Trabalhista+em+Campo+Grande+RJ+%7C+Previdenci%C3%A1rio+em+Campo+Grande+RJ,+Av.+Maria+Teresa,+75+-+Sl+630+-+Campo+Grande,+Rio+de+Janeiro+-+RJ,+23050-160/@-22.885678,-43.3815552,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x9be31af3191af1:0xecb54aec549789c8!2m2!1d-43.5657957!2d-22.9043377" target="_blank" rel="noopener" aria-label="Abrir rota no Google Maps">
-        <span class="map__pin-dot"></span>
-        <span class="map__pin-label">Dr. Thiago Ferreira Faria</span>
-      </a>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2448591166626!2d-43.565795699999995!3d-22.9043377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be31af3191af1%3A0xecb54aec549789c8!2sAdvogado%20Dr.Thiago%20Ferreira%20Faria%20%7C%20Direito%20Trabalhista%20em%20Campo%20Grande%20RJ%20%7C%20Previdenci%C3%A1rio%20em%20Campo%20Grande%20RJ!5e0!3m2!1spt-BR!2sbr!4v1788962315739!5m2!1spt-BR!2sbr" title="Mapa do escritório — Av. Maria Teresa, 75, Campo Grande, RJ" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </div>
 </section>
