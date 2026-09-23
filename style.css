@@ -549,23 +549,11 @@ body.drawer-lock{overflow:hidden}
 
 /* status aberto/fechado, calculado por JS a partir do horário real */
 .local__status{
-  display:inline-flex;align-items:center;gap:10px;margin:20px 0 0;
-  font-size:13px;font-weight:600;letter-spacing:.02em;color:rgba(247,244,239,.75);
+  margin:20px 0 0;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(247,244,239,.5);
 }
-.local__status-dot{
-  position:relative;flex:0 0 auto;width:8px;height:8px;border-radius:50%;
-  background:rgba(247,244,239,.35);
-}
-.local__status.is-open .local__status-dot{background:#5fd97d}
-.local__status.is-open .local__status-dot::after{
-  content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(95,217,125,.5);
-  animation:local-pulse 2.2s ease-out infinite;
-}
-.local__status.is-closed .local__status-dot{background:var(--color-copper)}
-@keyframes local-pulse{
-  0%{transform:scale(.6);opacity:1}
-  100%{transform:scale(1.8);opacity:0}
-}
+.local__status.is-open{color:#5fd97d}
+.local__status.is-closed{color:var(--color-copper)}
 
 .local__list{
   margin:clamp(28px,4vh,40px) 0 clamp(36px,5vh,48px);padding-top:clamp(28px,4vh,40px);
