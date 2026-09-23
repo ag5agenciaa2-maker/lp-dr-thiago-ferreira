@@ -612,9 +612,19 @@ body.drawer-lock{overflow:hidden}
 }
 
 /* ---------- rodapé ---------- */
-.footer{background:var(--color-ink);color:var(--color-offwhite);padding:clamp(48px,8vh,88px) var(--pad-x) 0}
-.footer__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,6vh,64px)}
+.footer{
+  background:var(--color-ink);color:var(--color-offwhite);padding:clamp(48px,8vh,88px) var(--pad-x) 0;
+  border-top:1px solid rgba(232,147,94,.2);
+}
+.footer__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,6vh,64px)}
 .footer__logo{height:64px;width:auto;margin-bottom:20px}
+
+@media (max-width:991px) and (min-width:768px){
+  .footer__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:767px){
+  .footer__grid{grid-template-columns:1fr}
+}
 .footer p{margin:0;max-width:32ch;font-size:14px;line-height:1.7;color:rgba(247,244,239,.62)}
 .footer__title{margin:0 0 16px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-copper);font-weight:600}
 .footer__links{display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.5}
@@ -723,3 +733,65 @@ body.drawer-lock{overflow:hidden}
   .wa-premium-container{bottom:16px;right:16px}
   .wa-bubble{width:260px;bottom:72px}
 }
+
+/* ========== Seção Contato — Background Imagem Editorial ========== */
+.section--contact-bg{
+  position:relative;
+  background-image:url('assets/contact-law-office-bg.jpg');
+  background-size:cover;
+  background-position:center 40%;
+  background-attachment:fixed;
+  color:var(--color-offwhite);
+}
+
+/* Overlay com gradiente — lado esq mais escuro para o formulário, lado dir mais translúcido */
+.contact-bg__overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    105deg,
+    rgba(14,18,24,.92) 0%,
+    rgba(14,18,24,.82) 50%,
+    rgba(14,18,24,.70) 100%
+  );
+  pointer-events:none;
+  z-index:0;
+}
+
+/* Garante que o conteúdo fique acima do overlay */
+.section--contact-bg .wrap{position:relative;z-index:1}
+
+/* Ajustes de cor sobre fundo escuro */
+.section--contact-bg .kicker--copper{color:var(--color-copper)}
+.section--contact-bg .h2{color:var(--color-offwhite)}
+.section--contact-bg .lede{color:rgba(247,244,239,.80)}
+.section--contact-bg .note{color:rgba(247,244,239,.65)}
+.section--contact-bg .note a{color:var(--color-copper)}
+.section--contact-bg .note a:hover{color:var(--color-offwhite)}
+.section--contact-bg .contact__assurances dt{color:var(--color-copper)}
+.section--contact-bg .contact__assurances dd{color:rgba(247,244,239,.75)}
+
+/* Formulário sobre fundo escuro */
+.section--contact-bg .form label{color:rgba(247,244,239,.85);font-size:13px;font-weight:500;letter-spacing:.04em}
+.section--contact-bg .form input,
+.section--contact-bg .form select,
+.section--contact-bg .form textarea{
+  background:rgba(247,244,239,.07);
+  border-color:rgba(247,244,239,.18);
+  color:var(--color-offwhite);
+}
+.section--contact-bg .form input::placeholder,
+.section--contact-bg .form textarea::placeholder{color:rgba(247,244,239,.35)}
+.section--contact-bg .form input:focus,
+.section--contact-bg .form select:focus,
+.section--contact-bg .form textarea:focus{
+  border-color:var(--color-copper);
+  background:rgba(247,244,239,.10);
+  outline:none;
+}
+.section--contact-bg .form select option{background:var(--color-navy);color:var(--color-offwhite)}
+.section--contact-bg .form__fine{color:rgba(247,244,239,.45)}
+
+@media (max-width:768px){
+  .section--contact-bg{background-attachment:scroll}
+}
+
