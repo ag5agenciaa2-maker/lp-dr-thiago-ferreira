@@ -633,7 +633,7 @@ body.drawer-lock{overflow:hidden}
 .footer__links{display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.5}
 .footer__links a{color:rgba(247,244,239,.85)}
 .footer__links a:hover{color:var(--color-copper)}
-.footer__links--contact{gap:18px}
+.footer__links--contact{gap:12px}
 .footer__links--contact a{display:inline-flex;align-items:flex-start;gap:12px}
 .footer__links--contact svg{flex-shrink:0;margin-top:3px;color:rgba(247,244,239,.55);transition:color .2s ease}
 .footer__links--contact a:hover svg{color:var(--color-copper)}
