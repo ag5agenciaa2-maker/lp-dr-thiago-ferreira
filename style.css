@@ -618,6 +618,9 @@ body.drawer-lock{overflow:hidden}
 }
 .footer__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,6vh,64px)}
 .footer__logo{height:64px;width:auto;margin-bottom:20px}
+.footer__social{display:flex;gap:14px;margin-top:18px}
+.footer__social a{display:flex;color:rgba(247,244,239,.7);transition:color .2s ease,transform .2s ease}
+.footer__social a:hover{color:var(--color-copper);transform:translateY(-2px)}
 
 @media (max-width:991px) and (min-width:768px){
   .footer__grid{grid-template-columns:1fr 1fr}
