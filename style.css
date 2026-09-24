@@ -424,7 +424,7 @@ body.drawer-lock{overflow:hidden}
 
 .counters{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(20,22,26,.14)}
 .counter{
-  position:relative;background:var(--color-offwhite);padding:clamp(19px,2.7vw,30px) clamp(16px,2vw,24px);
+  position:relative;background:var(--color-offwhite);padding:clamp(18px,2.57vw,28.5px) clamp(16px,2vw,24px);
   overflow:hidden;transition:background .3s ease;
 }
 .counter::after{
