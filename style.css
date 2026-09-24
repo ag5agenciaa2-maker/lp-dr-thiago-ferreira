@@ -203,7 +203,7 @@ body.drawer-lock{overflow:hidden}
 .hero__kicker-line{display:inline-block;width:32px;height:1px;background:var(--color-copper)}
 
 .hero__title{
-  margin:0;font-weight:600;line-height:.96;letter-spacing:-.03em;font-size:clamp(1.87rem,5.06vw,4.29rem);
+  margin:0;font-weight:600;line-height:.96;letter-spacing:-.03em;font-size:clamp(2.06rem,5.57vw,4.72rem);
   text-shadow:0 2px 40px rgba(0,0,0,.25);
 }
 .hero__title > span{display:block}
