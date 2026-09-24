@@ -77,10 +77,10 @@ p{text-wrap:pretty}
 
 .nav__glider{
   position:absolute;top:6px;bottom:6px;left:0;width:0;border-radius:999px;
-  background:linear-gradient(135deg,rgba(232,147,94,.22),rgba(232,147,94,.08));
-  border:1px solid rgba(232,147,94,.3);
-  box-shadow:0 0 0 1px rgba(232,147,94,.05) inset,0 4px 16px -6px rgba(232,147,94,.5);
-  opacity:0;transition:transform .45s var(--ease-out-soft),width .45s var(--ease-out-soft),opacity .3s ease;
+  background:linear-gradient(135deg,rgba(232,147,94,.14),rgba(232,147,94,.05));
+  border:1px solid rgba(232,147,94,.18);
+  box-shadow:0 0 0 1px rgba(232,147,94,.04) inset,0 4px 16px -8px rgba(232,147,94,.35);
+  opacity:0;transition:transform .65s var(--ease-out-soft),width .65s var(--ease-out-soft),opacity .45s ease;
   pointer-events:none;
 }
 .nav__menu.has-target .nav__glider{opacity:1}
@@ -88,10 +88,10 @@ p{text-wrap:pretty}
 .nav__menu a{
   position:relative;z-index:1;padding:9px 16px;border-radius:999px;color:rgba(247,244,239,.72);
   font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:500;
-  transition:color .3s ease;
+  transition:color .45s ease;
 }
 .nav__menu a:hover{color:var(--color-offwhite)}
-.nav__menu a.is-active{color:var(--color-copper);font-weight:600}
+.nav__menu a.is-active{color:rgba(232,147,94,.85);font-weight:600}
 
 .nav__cta{
   position:relative;overflow:hidden;isolation:isolate;padding:12px 22px;font-size:13px;
