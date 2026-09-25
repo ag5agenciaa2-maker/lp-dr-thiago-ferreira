@@ -158,6 +158,7 @@
       dot.type = 'button';
       dot.className = 'carousel__dot';
       dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
       dot.setAttribute('aria-label', `Ir para foto ${i + 1}`);
       dot.addEventListener('click', () => goTo(i, true));
       dotsWrap.appendChild(dot);
@@ -166,7 +167,10 @@
 
     const render = () => {
       slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
-      dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+      dots.forEach((d, i) => {
+        d.classList.toggle('is-active', i === current);
+        d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      });
       if (countCurrent) countCurrent.textContent = String(current + 1).padStart(2, '0');
       if (captionEl) {
         const caption = slides[current]?.dataset.caption || '';

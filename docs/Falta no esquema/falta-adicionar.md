@@ -28,9 +28,9 @@
 
 ---
 
-## ⚠️ Domínio — pendência crítica de infraestrutura
+## ✅ Domínio — resolvido
 
-- [ ] **Domínio final do site não confirmado.** Todas as URLs absolutas (canonical, og:url, schema `url`/`@id`/`sameAs`, sitemap.xml, llms.txt, robots.txt) foram geradas usando o placeholder `https://www.thiagoferreiraadvocacia.com.br/`. **Confirmar o domínio real de produção (Cloudflare Pages) e substituir em todos os arquivos antes do deploy final.**
+- [x] **Domínio padrão AG5 aplicado**: `https://thiagoferreiraadvocacia.ag5agencia.site/` (slug: `thiagoferreiraadvocacia`), substituindo o placeholder anterior em todas as URLs absolutas (canonical, og:url, schema `url`/`@id`, sitemap.xml, llms.txt, robots.txt) nas 3 páginas HTML. Se o cliente vier a usar um domínio próprio (ex.: `.com.br`) no futuro, repetir a substituição.
 
 ---
 

@@ -184,7 +184,7 @@ body.drawer-lock{overflow:hidden}
 /* ---------- hero ---------- */
 .hero{
   position:relative;overflow:hidden;color:var(--color-offwhite);
-  min-height:92vh;display:flex;flex-direction:column;justify-content:center;
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
   padding:clamp(110px,15vh,150px) var(--pad-x) clamp(48px,7vh,80px);
   background:
     linear-gradient(115deg,rgba(232,147,94,.05) 0%,transparent 30%),
@@ -470,8 +470,9 @@ body.drawer-lock{overflow:hidden}
 }
 
 .carousel__arrow{
+  /* Accessibility fix: 44x44 = touch target mínimo (era 38x38) */
   position:absolute;top:50%;transform:translateY(-50%);z-index:3;
-  display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;
   background:rgba(22,33,45,.55);backdrop-filter:blur(6px);color:var(--color-offwhite);
   border:1px solid rgba(247,244,239,.25);cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease;
 }
@@ -483,7 +484,8 @@ body.drawer-lock{overflow:hidden}
 .carousel__meta{min-width:0}
 .carousel__count{
   margin:0 0 4px;font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.06em;
-  color:rgba(20,22,26,.42);white-space:nowrap;
+  /* Accessibility fix: opacity .42 falhava WCAG 4.5:1 (ratio 2.67); .62 aprova (ratio ~4.6) */
+  color:rgba(20,22,26,.62);white-space:nowrap;
 }
 .carousel__count-current{color:var(--color-navy);font-weight:600}
 .carousel__caption{
@@ -492,12 +494,14 @@ body.drawer-lock{overflow:hidden}
   transition:opacity .3s ease;
 }
 .carousel__dots{display:flex;gap:8px;flex-shrink:0;padding-bottom:2px}
+/* Accessibility fix: padding igual nos 4 lados amplia a área de toque sem esticar o círculo; background-clip mantém o visual pequeno original */
 .carousel__dot{
-  width:6px;height:6px;border-radius:50%;border:0;padding:0;cursor:pointer;
+  width:6px;height:6px;border-radius:50%;border:0;cursor:pointer;
+  padding:6px;background-clip:content-box;
   background:rgba(20,22,26,.22);transition:background .25s ease,transform .25s ease,width .3s ease;
 }
 .carousel__dot:hover{background:rgba(20,22,26,.4)}
-.carousel__dot.is-active{width:22px;border-radius:4px;background:var(--color-copper)}
+.carousel__dot.is-active{width:10px;border-radius:50%;background:var(--color-copper)}
 
 @media (max-width:900px){
   .about{grid-template-columns:1fr}
@@ -669,11 +673,8 @@ body.drawer-lock{overflow:hidden}
 @keyframes revealIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
+/* PageSpeed fix: seletores .hero__text/.hero__title .reveal removidos — hero não usa mais reveal (ver LCP fix) */
 .reveal{animation:revealUp 700ms var(--ease-out-soft) both;will-change:transform,opacity}
-.hero__text .reveal:nth-of-type(2){animation-delay:110ms}
-.hero__text .reveal:nth-of-type(3){animation-delay:220ms}
-.hero__title .reveal:nth-child(2){animation-delay:110ms}
-.hero__title .reveal:nth-child(3){animation-delay:220ms}
 
 /* revelação ligada ao scroll onde houver suporte; sem suporte, anima no load */
 @supports (animation-timeline:view()){
@@ -742,8 +743,9 @@ body.drawer-lock{overflow:hidden}
 .wa-badge.show{opacity:1;transform:scale(1)}
 
 .wa-close{
-  position:absolute;top:10px;right:10px;background:none;border:none;color:#999;cursor:pointer;
-  padding:5px;transition:color .3s;display:flex;align-items:center;justify-content:center;
+  /* Accessibility fix: padding 15px = touch target 44x44 (ícone 14px mantido) */
+  position:absolute;top:2px;right:2px;background:none;border:none;color:#999;cursor:pointer;
+  padding:15px;transition:color .3s;display:flex;align-items:center;justify-content:center;
 }
 .wa-close:hover{color:#666}
 

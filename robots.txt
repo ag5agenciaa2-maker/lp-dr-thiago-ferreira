@@ -19,6 +19,6 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://www.thiagoferreiraadvocacia.com.br/sitemap.xml
+Sitemap: https://thiagoferreiraadvocacia.ag5agencia.site/sitemap.xml
 
-# LLMs: https://www.thiagoferreiraadvocacia.com.br/llms.txt
+# LLMs: https://thiagoferreiraadvocacia.ag5agencia.site/llms.txt
