@@ -1,36 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Termos e Condições — Dr. Thiago Ferreira Faria Advocacia</title>
-<meta name="description" content="Termos e condições de uso do site de Dr. Thiago Ferreira Faria — Advocacia e Consultoria Jurídica." />
-<meta name="robots" content="noindex, follow" />
-<link rel="canonical" href="https://thiagoferreiraadvocacia.ag5agencia.site/termos-e-condicoes" />
-<link rel="icon" href="assets/favicon-thiago-ferreira-faria.ico" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="cookie-banner.css" />
-<style>
-  .legal{padding:clamp(140px,18vh,180px) var(--pad-x) clamp(64px,10vh,120px);background:var(--color-offwhite)}
-  .legal__wrap{max-width:760px;margin:0 auto}
-  .legal h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px}
-  .legal__updated{margin:0 0 40px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:rgba(20,22,26,.55)}
-  .legal h2{font-size:clamp(1.1rem,2vw,1.4rem);margin:40px 0 12px}
-  .legal h3{font-size:clamp(.95rem,1.6vw,1.1rem);margin:24px 0 8px}
-  .legal p,.legal li{font-size:15px;line-height:1.7;color:rgba(20,22,26,.82)}
-  .legal ul{padding-left:20px;margin:0 0 16px}
-  .legal a{color:var(--color-copper)}
-  .legal__back{display:inline-block;margin-top:48px;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
-</style>
-</head>
-<body>
+<!--
+  Template canônico — Nav + Footer + Drawer Mobile + Cookie LGPD
+  Dr. Thiago Ferreira Faria Advocacia
+  Fonte da verdade: index.html (raiz do projeto). Gerado pela Skill "Rodapé Padrão nas Páginas".
 
+  {{BASE}} = profundidade do caminho relativo:
+    - Página na RAIZ (ex.: termos-e-condicoes.html, politica-de-privacidade.html): {{BASE}} = "" (vazio)
+    - Página em SUBPASTA (ex.: blog/post.html): {{BASE}} = "../"
+
+  Links internos de âncora da home (#topo, #areas, #sobre, #depoimentos, #contato) usam "/{{BASE}}#âncora"
+  quando a página NÃO é a home, e "#âncora" puro quando é (nav sempre aponta pra home + âncora).
+
+  Regenerar este arquivo sempre que o nav/footer/cookie do index.html mudar (PASSO 6d da skill).
+-->
+
+<!-- ========== NAV (desktop + mobile) ========== -->
 <nav class="nav is-solid" id="nav" aria-label="Navegação principal">
-  <a class="nav__logo" href="/" aria-label="Início">
-    <img src="assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" />
+  <a class="nav__logo" href="{{BASE}}/" aria-label="Início">
+    <img src="{{BASE}}assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" />
   </a>
   <div class="nav__right">
     <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menu">
@@ -38,74 +24,29 @@
     </button>
     <div class="nav__menu" id="navMenu">
       <span class="nav__glider" id="navGlider" aria-hidden="true"></span>
-      <a href="/#topo">Início</a>
-      <a href="/#areas">Áreas</a>
-      <a href="/#sobre">Sobre</a>
-      <a href="/#depoimentos">Depoimentos</a>
-      <a href="/#contato">Contato</a>
+      <a href="{{BASE}}/#topo">Início</a>
+      <a href="{{BASE}}/#areas">Áreas</a>
+      <a href="{{BASE}}/#sobre">Sobre</a>
+      <a href="{{BASE}}/#depoimentos">Depoimentos</a>
+      <a href="{{BASE}}/#contato">Contato</a>
     </div>
     <a class="btn btn--copper nav__cta" href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp – menu principal">Falar no WhatsApp</a>
   </div>
 </nav>
 
-<main class="legal">
-  <div class="legal__wrap">
-    <h1>Termos e Condições de Uso</h1>
-    <p class="legal__updated">Atualizado em 10 de setembro de 2026</p>
+<!-- Nota: na home (index.html), a classe "is-solid" NÃO fica fixa no HTML — é adicionada via script.js
+     ao passar de 80px de scroll. Nas páginas secundárias (fundo claro, sem hero), a classe "is-solid"
+     fica fixa desde o início (nav sempre sólida). Ajustar conforme o tipo de página. -->
 
-    <p>Estes Termos e Condições regulam o uso do site de <strong>Dr. Thiago Ferreira Faria — Advocacia e Consultoria Jurídica</strong>, escritório com atuação em Direito Previdenciário, Trabalhista, de Família, Criminal e do Consumidor, localizado em Campo Grande, Rio de Janeiro — RJ. Ao navegar neste site, você concorda com os termos descritos abaixo.</p>
 
-    <h2>1. Aceitação dos Termos</h2>
-    <p>Ao acessar e utilizar este site — incluindo o preenchimento do formulário de contato ou o envio de mensagem via WhatsApp — você declara ter lido, compreendido e concordado com estes Termos e Condições e com a nossa <a href="/politica-de-privacidade">Política de Privacidade</a>. Caso não concorde com algum destes termos, recomendamos que não utilize o site.</p>
-
-    <h2>2. Finalidade do Site</h2>
-    <p>Este site tem caráter institucional e informativo, apresentando as áreas de atuação do escritório (Direito Previdenciário, Trabalhista, Família, Criminal e do Consumidor), a trajetória profissional do Dr. Thiago Ferreira Faria e os canais de contato para solicitação de atendimento jurídico.</p>
-
-    <h2>3. Natureza das Informações</h2>
-    <p>O conteúdo disponibilizado neste site tem finalidade informativa e não constitui consulta jurídica, parecer ou aconselhamento legal. Toda avaliação de caso concreto depende de análise individualizada, feita diretamente com o advogado responsável pelos canais de contato indicados no site.</p>
-
-    <h2>4. Direitos de Propriedade Intelectual</h2>
-    <p>Os textos, imagens, identidade visual, logotipo e demais elementos deste site são de propriedade do escritório de Dr. Thiago Ferreira Faria ou usados mediante autorização, sendo protegidos pela Lei de Direitos Autorais (Lei nº 9.610/1998). É vedada a reprodução, distribuição ou uso comercial de qualquer conteúdo deste site sem autorização prévia.</p>
-
-    <h2>5. Uso Aceitável</h2>
-    <p>Ao utilizar este site, você se compromete a não:</p>
-    <ul>
-      <li>Utilizar o formulário de contato para fins diversos de solicitação de atendimento jurídico, incluindo o envio de spam ou conteúdo ofensivo;</li>
-      <li>Tentar acessar áreas restritas, extrair dados de forma automatizada ou comprometer a segurança do site;</li>
-      <li>Reproduzir ou redistribuir o conteúdo do site sem autorização.</li>
-    </ul>
-
-    <h2>6. Formulário de Contato</h2>
-    <p>Ao preencher o formulário disponível na seção "Fale com o escritório", você fornece voluntariamente nome, WhatsApp, e-mail, área do caso e a descrição da situação, para viabilizar o retorno do escritório sobre o atendimento solicitado. O tratamento desses dados segue o disposto na nossa <a href="/politica-de-privacidade">Política de Privacidade</a>.</p>
-
-    <h2>7. Cookies e Tecnologias</h2>
-    <p>Este site utiliza cookies para funcionamento básico e, mediante consentimento, para fins funcionais, analíticos, de desempenho e publicidade, conforme detalhado na <a href="/politica-de-privacidade">Política de Privacidade</a>. Você pode gerenciar suas preferências a qualquer momento pelo link <strong>"Cookie"</strong> no rodapé do site.</p>
-
-    <h2>8. Limitação de Responsabilidade</h2>
-    <p>O escritório envida esforços para manter as informações do site atualizadas e corretas, mas não garante que o conteúdo esteja livre de eventuais imprecisões. O escritório não se responsabiliza por decisões tomadas exclusivamente com base no conteúdo informativo do site, sem a devida consulta jurídica individualizada.</p>
-
-    <h2>9. Lei Aplicável e Foro</h2>
-    <p>Estes Termos e Condições são regidos pela legislação brasileira, incluindo a Lei Geral de Proteção de Dados (Lei nº 13.709/2018) e o Código de Defesa do Consumidor (Lei nº 8.078/1990), no que for aplicável. Fica eleito o foro da Comarca do Rio de Janeiro — RJ para dirimir eventuais controvérsias, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
-
-    <h2>10. Contato</h2>
-    <ul>
-      <li>WhatsApp: <a href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20jur%C3%ADdica." target="_blank" rel="noopener">(21) 96693-8793</a></li>
-      <li>Telefone: <a href="tel:+552122545115">(21) 2254-5115</a></li>
-      <li>E-mail: <a href="mailto:thiago.adv.ferreira@gmail.com">thiago.adv.ferreira@gmail.com</a></li>
-      <li>Endereço: Av. Maria Teresa, 75 — Sl 630, Campo Grande, Rio de Janeiro — RJ, 23050-160</li>
-    </ul>
-
-    <a class="legal__back" href="/">← Voltar ao site</a>
-  </div>
-</main>
-
+<!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="wrap footer__grid">
     <div>
-      <img class="footer__logo" src="assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" loading="lazy" />
+      <img class="footer__logo" src="{{BASE}}assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" loading="lazy" />
       <p>Advocacia e consultoria jurídica em Previdenciário, Trabalhista, Família, Criminal e Consumidor. Atendimento em todo o estado do Rio de Janeiro.</p>
       <div class="footer__social">
-        <a href="https://www.instagram.com/thiago.adv.ferreira" target="_blank" rel="noopener" aria-label="Instagram">
+        <a href="https://www.instagram.com/thiago.adv.ferreira" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
         </a>
       </div>
@@ -113,21 +54,21 @@
     <div>
       <p class="footer__title">Navegação</p>
       <div class="footer__links">
-        <a href="/#topo">Início</a>
-        <a href="/#areas">Áreas</a>
-        <a href="/#sobre">Sobre</a>
-        <a href="/#depoimentos">Depoimentos</a>
-        <a href="/#contato">Contato</a>
+        <a href="{{BASE}}/#topo">Início</a>
+        <a href="{{BASE}}/#areas">Áreas</a>
+        <a href="{{BASE}}/#sobre">Sobre</a>
+        <a href="{{BASE}}/#depoimentos">Depoimentos</a>
+        <a href="{{BASE}}/#contato">Contato</a>
       </div>
     </div>
     <div>
       <p class="footer__title">Áreas de atuação</p>
       <div class="footer__links">
-        <a href="/#areas">Direito Previdenciário</a>
-        <a href="/#areas">Direito do Trabalho</a>
-        <a href="/#areas">Direito de Família</a>
-        <a href="/#areas">Direito Criminal</a>
-        <a href="/#areas">Direito do Consumidor</a>
+        <a href="{{BASE}}/#areas">Direito Previdenciário</a>
+        <a href="{{BASE}}/#areas">Direito do Trabalho</a>
+        <a href="{{BASE}}/#areas">Direito de Família</a>
+        <a href="{{BASE}}/#areas">Direito Criminal</a>
+        <a href="{{BASE}}/#areas">Direito do Consumidor</a>
       </div>
     </div>
     <div>
@@ -155,31 +96,35 @@
         Cookie
       </a>
       <span class="credits__sep" aria-hidden="true">|</span>
-      <a href="/termos-e-condicoes">Termos e Condições</a>
+      <a href="{{BASE}}/termos-e-condicoes">Termos e Condições</a>
       <span class="credits__sep" aria-hidden="true">|</span>
-      <a href="/politica-de-privacidade">Política de Privacidade</a>
+      <a href="{{BASE}}/politica-de-privacidade">Política de Privacidade</a>
     </div>
   </div>
 </footer>
 
+
+<!-- ========== MOBILE DRAWER (overlay + menu lateral) ========== -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <aside class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer__head">
-    <img class="drawer__logo" src="assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" />
+    <img class="drawer__logo" src="{{BASE}}assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" />
     <button class="drawer__close" id="drawerClose" type="button" aria-label="Fechar menu">
       <span></span><span></span>
     </button>
   </div>
   <nav class="drawer__menu" id="drawerMenu" aria-label="Navegação mobile">
-    <a href="/#topo">Início</a>
-    <a href="/#areas">Áreas</a>
-    <a href="/#sobre">Sobre</a>
-    <a href="/#depoimentos">Depoimentos</a>
-    <a href="/#contato">Contato</a>
+    <a href="{{BASE}}/#topo">Início</a>
+    <a href="{{BASE}}/#areas">Áreas</a>
+    <a href="{{BASE}}/#sobre">Sobre</a>
+    <a href="{{BASE}}/#depoimentos">Depoimentos</a>
+    <a href="{{BASE}}/#contato">Contato</a>
     <a class="btn btn--copper drawer__cta" href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp – menu mobile">Falar no WhatsApp</a>
   </nav>
 </aside>
 
+
+<!-- ========== COOKIE BANNER — Padrão AG5 (skill-cookie-banner-universal) ========== -->
 <div id="ck-banner" class="ck-banner" role="dialog" aria-modal="true" aria-label="Aviso de cookies" aria-live="polite" aria-hidden="true">
   <div class="ck-banner__inner">
     <div class="ck-banner__content">
@@ -188,7 +133,7 @@
         Utilizamos cookies para aprimorar sua experiência de navegação, exibir conteúdo
         personalizado e analisar nosso tráfego. Ao clicar em <strong>"Aceitar todos"</strong>,
         você concorda com nosso uso de cookies conforme nossa
-        <a href="/politica-de-privacidade" class="ck-banner__link">Política de Privacidade</a>.
+        <a href="{{BASE}}/politica-de-privacidade" class="ck-banner__link">Política de Privacidade</a>.
       </p>
     </div>
     <div class="ck-banner__actions">
@@ -290,6 +235,7 @@
 
 <button id="ck-prefs-btn" class="ck-prefs-btn" aria-label="Preferências de cookies" style="display:none;">Cookies</button>
 
+
 <!-- ========== WhatsApp Premium (Balão + Botão flutuante) — Padrão AG5 V4 ========== -->
 <div class="wa-premium-container">
   <div id="wa-message-bubble" class="wa-bubble">
@@ -299,7 +245,7 @@
     <div class="wa-content">
       <div class="wa-header">
         <div class="wa-avatar-wrapper">
-          <img src="assets/thiago-ferreira-faria-advogado-escritorio-campo-grande.webp" alt="Dr. Thiago Ferreira" class="wa-avatar" width="48" height="48">
+          <img src="{{BASE}}assets/thiago-ferreira-faria-advogado-escritorio-campo-grande.webp" alt="Dr. Thiago Ferreira" class="wa-avatar" width="48" height="48">
         </div>
         <div class="wa-info">
           <span class="wa-name">Dr. Thiago Ferreira</span>
@@ -324,8 +270,8 @@
   </a>
 </div>
 
-<script src="script.js" defer></script>
-<script src="cookie-banner.js" defer></script>
+
+<!-- ========== SCRIPTS (ordem obrigatória: script.js -> cookie-banner.js -> analytics AG5) ========== -->
+<script src="{{BASE}}script.js" defer></script>
+<script src="{{BASE}}cookie-banner.js" defer></script>
 <script src="https://control-blog.ag5agencia.site/r.js" data-c="thiago-ferreira-faria" defer></script>
-</body>
-</html>

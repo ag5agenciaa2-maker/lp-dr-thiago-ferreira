@@ -27,10 +27,24 @@
 </head>
 <body>
 
-<nav class="nav is-solid" id="nav">
+<nav class="nav is-solid" id="nav" aria-label="Navegação principal">
   <a class="nav__logo" href="/" aria-label="Início">
     <img src="assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" />
   </a>
+  <div class="nav__right">
+    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__menu" id="navMenu">
+      <span class="nav__glider" id="navGlider" aria-hidden="true"></span>
+      <a href="/#topo">Início</a>
+      <a href="/#areas">Áreas</a>
+      <a href="/#sobre">Sobre</a>
+      <a href="/#depoimentos">Depoimentos</a>
+      <a href="/#contato">Contato</a>
+    </div>
+    <a class="btn btn--copper nav__cta" href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp – menu principal">Falar no WhatsApp</a>
+  </div>
 </nav>
 
 <main class="legal">
@@ -72,7 +86,7 @@
 
     <h2>6. Contato</h2>
     <ul>
-      <li>WhatsApp: <a href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20jur%C3%ADdica." target="_blank" rel="noopener">(21) 96693-8793</a></li>
+      <li>WhatsApp: <a href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20jur%C3%ADdica." target="_blank" rel="noopener noreferrer">(21) 96693-8793</a></li>
       <li>Telefone: <a href="tel:+552122545115">(21) 2254-5115</a></li>
       <li>E-mail: <a href="mailto:thiago.adv.ferreira@gmail.com">thiago.adv.ferreira@gmail.com</a></li>
       <li>Endereço: Av. Maria Teresa, 75 — Sl 630, Campo Grande, Rio de Janeiro — RJ, 23050-160</li>
@@ -82,16 +96,86 @@
   </div>
 </main>
 
-<div class="wrap" style="max-width:1180px;margin:0 auto;padding:24px var(--pad-x);text-align:center">
-  <a href="#" id="ck-prefs-link" style="text-decoration:none; color:inherit; display:inline-flex; align-items:center; gap:6px; font-size:13px; color:rgba(20,22,26,.55)">
-    <span id="cookie-toggle" class="active" style="display:inline-flex; align-items:center; width:28px; height:14px; background:rgba(20,22,26,0.06); border-radius:10px; padding:2px; border:1px solid rgba(20,22,26,0.15); position:relative; font-size:8px; font-weight:bold;">
-      <span style="color:#16a34a; margin-left:2px;">✓</span>
-      <span style="color:#dc2626; margin-left:auto; margin-right:2px;">✕</span>
-      <span id="cookie-toggle-dot" style="position:absolute; left:15px; width:10px; height:10px; background:var(--color-copper); border-radius:50%; box-shadow:0 0 5px rgba(0,0,0,0.15); transition:left .2s ease;"></span>
-    </span>
-    Preferências de cookies
-  </a>
-</div>
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <img class="footer__logo" src="assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" loading="lazy" />
+      <p>Advocacia e consultoria jurídica em Previdenciário, Trabalhista, Família, Criminal e Consumidor. Atendimento em todo o estado do Rio de Janeiro.</p>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/thiago.adv.ferreira" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">Navegação</p>
+      <div class="footer__links">
+        <a href="/#topo">Início</a>
+        <a href="/#areas">Áreas</a>
+        <a href="/#sobre">Sobre</a>
+        <a href="/#depoimentos">Depoimentos</a>
+        <a href="/#contato">Contato</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">Áreas de atuação</p>
+      <div class="footer__links">
+        <a href="/#areas">Direito Previdenciário</a>
+        <a href="/#areas">Direito do Trabalho</a>
+        <a href="/#areas">Direito de Família</a>
+        <a href="/#areas">Direito Criminal</a>
+        <a href="/#areas">Direito do Consumidor</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">Contato</p>
+      <div class="footer__links footer__links--contact">
+        <a href="https://share.google/JUh9bQpia10CRbpCJ" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 11h.01M9 15h.01M15 11h.01M15 15h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dr. Thiago Ferreira Faria Advocacia</span></a>
+        <a href="https://www.google.com/maps/dir//Advogado+Dr.Thiago+Ferreira+Faria+%7C+Direito+Trabalhista+em+Campo+Grande+RJ+%7C+Previdenci%C3%A1rio+em+Campo+Grande+RJ,+Av.+Maria+Teresa,+75+-+Sl+630+-+Campo+Grande,+Rio+de+Janeiro+-+RJ,+23050-160/@-22.885678,-43.3815552,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x9be31af3191af1:0xecb54aec549789c8!2m2!1d-43.5657957!2d-22.9043377" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 1 0-14 0c0 4.9 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg><span>Av. Maria Teresa, 75 — Sl 630, Campo Grande, RJ</span></a>
+        <a href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20jur%C3%ADdica." target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.386.664 4.62 1.816 6.526L3 29l7.146-2.278a12.44 12.44 0 0 0 5.855 1.478h.005c6.905 0 12.5-5.596 12.5-12.5S22.906 3 16.001 3Zm0 22.87h-.004a10.37 10.37 0 0 1-5.283-1.447l-.379-.225-3.923 1.251 1.271-3.822-.247-.393a10.37 10.37 0 0 1-1.594-5.534c0-5.733 4.667-10.4 10.404-10.4 2.778 0 5.389 1.082 7.352 3.048a10.33 10.33 0 0 1 3.045 7.36c0 5.734-4.666 10.162-10.642 10.162Zm5.693-7.626c-.312-.156-1.846-.911-2.132-1.015-.286-.104-.494-.156-.702.156-.208.313-.806 1.015-.988 1.223-.182.208-.364.234-.676.078-.312-.156-1.318-.486-2.51-1.548-.928-.828-1.555-1.85-1.737-2.163-.182-.313-.02-.482.137-.637.14-.14.312-.365.468-.547.156-.182.208-.313.312-.521.104-.208.052-.39-.026-.547-.078-.156-.702-1.694-.962-2.32-.253-.61-.51-.527-.702-.537l-.598-.01c-.208 0-.547.078-.833.39-.286.313-1.09 1.066-1.09 2.6s1.116 3.017 1.272 3.226c.156.208 2.198 3.36 5.325 4.71.744.322 1.325.514 1.778.658.747.238 1.427.204 1.964.124.599-.09 1.846-.755 2.106-1.484.26-.729.26-1.354.182-1.484-.078-.13-.286-.208-.598-.364Z"/></svg><span>(21) 96693-8793 — WhatsApp</span></a>
+        <a href="tel:+552122545115"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-.6.4-1 1-1h3.2c.5 0 .9.3 1 .8l.8 3.2c.1.4 0 .8-.3 1.1L8 10.9a12 12 0 0 0 5.1 5.1l1.8-1.7c.3-.3.7-.4 1.1-.3l3.2.8c.5.1.8.5.8 1V19c0 .6-.4 1-1 1h-1C10.3 20 4 13.7 4 6V5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>(21) 2254-5115</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap credits">
+    <div class="credits__top">
+      <p>© Thiago Ferreira Advocacia 2026</p>
+      <p>Desenvolvido por <a href="https://www.ag5agencia.com.br" target="_blank" rel="noopener noreferrer">AG5</a> Agência</p>
+    </div>
+    <div class="credits__right">
+      <a href="#" id="ck-prefs-link" style="text-decoration:none; color:inherit; display:inline-flex; align-items:center; gap:6px;">
+        <span id="cookie-toggle" class="active" style="display:inline-flex; align-items:center; width:28px; height:14px; background:rgba(255,255,255,0.1); border-radius:10px; padding:2px; border:1px solid rgba(255,255,255,0.2); position:relative; font-size:8px; font-weight:bold;">
+          <span style="color:#86EFAC; margin-left:2px;">✓</span>
+          <span style="color:#FCA5A5; margin-left:auto; margin-right:2px;">✕</span>
+          <span id="cookie-toggle-dot" style="position:absolute; left:15px; width:10px; height:10px; background:var(--ck-accent); border-radius:50%; box-shadow:0 0 5px rgba(0,0,0,0.3); transition:left .2s ease;"></span>
+        </span>
+        Cookie
+      </a>
+      <span class="credits__sep" aria-hidden="true">|</span>
+      <a href="/termos-e-condicoes">Termos e Condições</a>
+      <span class="credits__sep" aria-hidden="true">|</span>
+      <a href="/politica-de-privacidade">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__head">
+    <img class="drawer__logo" src="assets/logo-thiago-ferreira-faria-advocacia.webp" alt="Thiago Ferreira — Advocacia &amp; Assessoria Jurídica" />
+    <button class="drawer__close" id="drawerClose" type="button" aria-label="Fechar menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="drawer__menu" id="drawerMenu" aria-label="Navegação mobile">
+    <a href="/#topo">Início</a>
+    <a href="/#areas">Áreas</a>
+    <a href="/#sobre">Sobre</a>
+    <a href="/#depoimentos">Depoimentos</a>
+    <a href="/#contato">Contato</a>
+    <a class="btn btn--copper drawer__cta" href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp – menu mobile">Falar no WhatsApp</a>
+  </nav>
+</aside>
 
 <div id="ck-banner" class="ck-banner" role="dialog" aria-modal="true" aria-label="Aviso de cookies" aria-live="polite" aria-hidden="true">
   <div class="ck-banner__inner">
@@ -203,6 +287,41 @@
 
 <button id="ck-prefs-btn" class="ck-prefs-btn" aria-label="Preferências de cookies" style="display:none;">Cookies</button>
 
+<!-- ========== WhatsApp Premium (Balão + Botão flutuante) — Padrão AG5 V4 ========== -->
+<div class="wa-premium-container">
+  <div id="wa-message-bubble" class="wa-bubble">
+    <button class="wa-close" id="wa-close-btn" aria-label="Fechar balão de mensagem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="14" height="14" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="wa-content">
+      <div class="wa-header">
+        <div class="wa-avatar-wrapper">
+          <img src="assets/thiago-ferreira-faria-advogado-escritorio-campo-grande.webp" alt="Dr. Thiago Ferreira" class="wa-avatar" width="48" height="48">
+        </div>
+        <div class="wa-info">
+          <span class="wa-name">Dr. Thiago Ferreira</span>
+        </div>
+      </div>
+      <div id="wa-typing" class="wa-typing">
+        <span></span><span></span><span></span>
+      </div>
+      <div id="wa-real-message" class="wa-message-text" style="display:none;">
+        <p>Olá! Estamos à disposição para esclarecer suas dúvidas. <strong>Atendimento humanizado.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5521966938793?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica."
+     class="wa-float-btn" target="_blank" rel="noopener noreferrer"
+     id="wa-main-btn" aria-label="Fale conosco pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="30" height="30">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="wa-badge" id="wa-notification" aria-hidden="true">1</span>
+  </a>
+</div>
+
+<script src="script.js" defer></script>
 <script src="cookie-banner.js" defer></script>
 <script src="https://control-blog.ag5agencia.site/r.js" data-c="thiago-ferreira-faria" defer></script>
 </body>
